@@ -1,0 +1,17 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Minecraft server data
+data/
+*.jar
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
