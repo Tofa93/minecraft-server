@@ -27,6 +27,7 @@ A self-built Dockerized Minecraft Java Edition server based on Eclipse Temurin a
 
 | File | Description |
 |---|---|
+| `docs/checklist.md` | Contains the project requirements and verification checklist. |
 | `Dockerfile` | Builds the custom Minecraft server image. |
 | `docker-compose.yaml` | Defines the service, networking, storage, and restart policy. |
 | `entrypoint.sh` | Initializes the configuration and starts the server. |
