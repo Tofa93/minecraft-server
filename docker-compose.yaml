@@ -1,0 +1,31 @@
+services:
+  mc-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: mc-server
+
+    stdin_open: true
+    tty: true
+
+    ports:
+      - "8888:25565"
+
+    environment:
+      EULA: "${EULA:-false}"
+      MEMORY_MIN: "${MEMORY_MIN:-1G}"
+      MEMORY_MAX: "${MEMORY_MAX:-2G}"
+      GAMEMODE: "${GAMEMODE:-survival}"
+      DIFFICULTY: "${DIFFICULTY:-normal}"
+      MAX_PLAYERS: "${MAX_PLAYERS:-20}"
+      MOTD: "${MOTD:-Minecraft Docker Server}"
+
+    volumes:
+      - mc-data:/data
+
+    restart: on-failure
+    stop_grace_period: 60s
+
+volumes:
+  mc-data:
